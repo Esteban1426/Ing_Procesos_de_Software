@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/alejo/Documentos/Ing_Procesos_de_Software/Semana_1/Taller AWS 1/venv/bin/python3" "$0" "$@"
+'''exec' "/home/ec2-user/Ing_Procesos_de_Software/Semana_1/Taller AWS 1/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

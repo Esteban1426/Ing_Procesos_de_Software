@@ -1,0 +1,94 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--millos-white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(12, 84, 160, 0.25);
+  border: 1px solid var(--millos-blue-light);
+}
+
+.modal h2 {
+  margin: 0 0 1rem;
+  color: var(--millos-blue-dark);
+  font-size: 1.25rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--millos-blue-dark);
+}
+
+.form input,
+.form select,
+.form textarea {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--millos-blue-light);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--millos-blue);
+  box-shadow: 0 0 0 2px rgba(12, 84, 160, 0.2);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cancelBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--millos-blue-light);
+  background: white;
+  color: var(--millos-blue-dark);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.saveBtn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--millos-blue);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saveBtn:hover {
+  background: var(--millos-blue-dark);
+}

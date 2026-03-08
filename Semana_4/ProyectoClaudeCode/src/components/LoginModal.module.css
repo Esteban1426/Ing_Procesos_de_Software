@@ -1,0 +1,103 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal {
+  background: var(--millos-white);
+  border-radius: 16px;
+  padding: 1.75rem;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(12, 84, 160, 0.3);
+  border: 2px solid var(--millos-blue-light);
+}
+
+.crestWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.crest {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.modal h2 {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  color: var(--millos-blue-dark);
+  font-size: 1.25rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--millos-blue-dark);
+}
+
+.form input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--millos-blue-light);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: var(--millos-blue);
+  box-shadow: 0 0 0 2px rgba(12, 84, 160, 0.2);
+}
+
+.error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #dc2626;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cancelBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--millos-blue-light);
+  background: white;
+  color: var(--millos-blue-dark);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.submitBtn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--millos-blue);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background: var(--millos-blue-dark);
+}

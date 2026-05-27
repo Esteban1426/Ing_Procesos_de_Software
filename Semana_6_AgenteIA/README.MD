@@ -1,99 +1,478 @@
-# Sistema Inteligente de Optimización Logística para Courier
+# 🚚 Agente IA Courier para Telegram
 
-## 📌 Descripción del Proyecto
+Bot inteligente para procesamiento y análisis de archivos Excel de despachos courier usando:
 
-Este proyecto consiste en el desarrollo de un agente básico de Inteligencia Artificial enfocado en la optimización de procesos logísticos dentro de una empresa de importación y manejo de mercancía courier.
+* 🤖 IA local con Ollama
+* 📦 Telegram Bot
+* 📊 Procesamiento avanzado de Excel
+* ☁️ Integración con Supabase
+* 🧠 Agente conversacional con herramientas IA
 
-La solución nace a partir de la necesidad de reducir tiempos operativos y mejorar la eficiencia en la gestión de carga, específicamente en actividades relacionadas con la validación y depuración de información contenida en archivos Excel utilizados para el despacho de mercancías.
-
-Actualmente, el proceso operativo requiere revisar manualmente grandes volúmenes de datos para identificar clientes con novedades, restricciones de despacho o pendientes de pago. Este procedimiento consume tiempo y aumenta el riesgo de errores humanos.
-
-El agente de IA propuesto tendrá como función principal analizar archivos Excel previamente organizados por el operador logístico y detectar automáticamente aquellos registros que no cumplen las condiciones necesarias para ser despachados, permitiendo agilizar la toma de decisiones y optimizar el flujo operativo dentro de la empresa.
-
----
-
-# 🎯 Objetivo General
-
-Diseñar e implementar un agente básico de Inteligencia Artificial capaz de analizar y depurar información logística contenida en archivos Excel, con el fin de optimizar tiempos operativos y mejorar la eficiencia en los procesos de despacho de mercancía courier.
+El proyecto permite automatizar operaciones logísticas, clasificación de despachos, búsquedas inteligentes y gestión de información directamente desde Telegram.
 
 ---
 
-# ✅ Objetivos Específicos
+# ✨ Características principales
 
-- Analizar la estructura de los archivos Excel utilizados en el proceso logístico de despacho.
-- Identificar automáticamente registros con novedades, restricciones o pendientes de pago.
-- Reducir el tiempo invertido en la validación manual de información logística.
-- Minimizar errores humanos durante el proceso de revisión y clasificación de mercancía.
-- Facilitar la toma de decisiones mediante la automatización básica del filtrado de datos.
-- Diseñar una solución tecnológica escalable que pueda evolucionar hacia procesos logísticos más inteligentes.
+## 📥 Procesamiento automático de Excel
 
----
+El bot recibe archivos `.xlsx` desde Telegram y automáticamente:
 
-# 🛠️ Plan de Trabajo
-
-## Fase 1 — Análisis del Problema
-- Identificación de las necesidades operativas del área logística.
-- Recolección de ejemplos reales de archivos Excel utilizados en la empresa.
-- Definición de reglas de negocio para validar restricciones de despacho.
-
-## Fase 2 — Diseño de la Solución
-- Diseño de la arquitectura básica del agente de IA.
-- Definición de las variables y campos importantes para el análisis de la carga.
-- Estructuración del flujo de procesamiento de datos.
-
-## Fase 3 — Desarrollo del Sistema
-- Implementación del lector y procesador de archivos Excel.
-- Desarrollo de las reglas de validación automática.
-- Creación del sistema de filtrado y clasificación de registros.
-
-## Fase 4 — Pruebas y Validación
-- Realización de pruebas con archivos reales o simulados.
-- Verificación de la precisión en la detección de novedades.
-- Corrección de errores y optimización del rendimiento.
-
-## Fase 5 — Documentación y Presentación
-- Elaboración de documentación técnica y funcional.
-- Creación del repositorio del proyecto en GitHub.
-- Presentación de resultados y posibles mejoras futuras.
+* Detecta columnas aunque tengan nombres distintos
+* Normaliza nombres de ciudades
+* Clasifica Bogotá y otras ciudades
+* Detecta patrones numéricos
+* Genera múltiples pestañas organizadas
+* Marca ciudades ambiguas en amarillo
+* Genera reportes listos para operación
 
 ---
 
-# 📌 Alcance del Proyecto
+## 🤖 Agente IA conversacional
 
-El proyecto estará enfocado inicialmente en la automatización básica del análisis de archivos Excel relacionados con procesos logísticos de courier. La primera versión del agente permitirá identificar clientes con restricciones de despacho, novedades operativas o pagos pendientes.
+Integración con Ollama para consultas en lenguaje natural.
 
-La solución no reemplazará completamente la supervisión humana, sino que funcionará como una herramienta de apoyo para agilizar procesos internos y mejorar la productividad del personal logístico.
+Ejemplos:
 
-A futuro, el sistema podrá ampliarse para incluir:
+```txt
+Busca la guía 2849
+```
 
-- Integración con sistemas empresariales.
-- Automatización de reportes.
-- Generación de alertas inteligentes.
-- Uso de modelos avanzados de IA para predicción logística.
+```txt
+Muéstrame los clientes con APX
+```
+
+```txt
+¿Cuáles son las ciudades con más despachos?
+```
+
+```txt
+Registra estas guías como revaluo
+```
+
+```txt
+Sube el último Excel procesado a Supabase
+```
 
 ---
 
-# 💻 Tecnologías Propuestas
+## ☁️ Integración con Supabase
 
-- Python
-- Pandas
-- OpenPyXL
-- Inteligencia Artificial básica
-- Procesamiento de datos en Excel
-- GitHub para control de versiones
+El sistema permite:
+
+* CRUD completo sobre tablas
+* Almacenamiento de Excels en Storage
+* Descarga automática de archivos
+* Gestión de revaluos y retenciones
+* Historial de archivos procesados
 
 ---
 
-# 🚀 Beneficios Esperados
+# 🧠 Arquitectura del proyecto
 
-- Reducción de tiempos operativos.
-- Mayor eficiencia en el despacho de mercancías.
-- Disminución de errores manuales.
-- Mejor organización de la información logística.
-- Optimización de procesos internos en la empresa.
+```txt
+Semana_6_AgenteIA/
+│
+├── bot.py                  # Bot principal de Telegram
+├── ai_tools.py             # Herramientas IA y lógica del agente
+├── excel_engine.py         # Procesamiento de Excel
+├── city_normalize.py       # Normalización de ciudades
+├── database.py             # Base de datos SQLite
+├── config.py               # Configuración central
+├── supabase_client.py      # Cliente Supabase
+├── supabase_storage.py     # Gestión de Storage
+├── requirements.txt
+│
+├── data/
+│   ├── excels/
+│   ├── processed/
+│   └── bot.db
+│
+├── logs/
+│   └── bot.log
+│
+└── .env
+```
+
+---
+
+# ⚙️ Tecnologías utilizadas
+
+## Backend
+
+* Python 3.12+
+* AsyncIO
+* SQLite
+
+## Telegram
+
+* Aiogram 3
+
+## IA Local
+
+* Ollama
+* Qwen
+
+## Excel
+
+* Pandas
+* OpenPyXL
+
+## Cloud
+
+* Supabase
+* Supabase Storage
+
+---
+
+# 📦 Instalación
+
+## 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/TU_USUARIO/Semana_6_AgenteIA.git
+cd Semana_6_AgenteIA
+```
+
+---
+
+## 2. Crear entorno virtual
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Linux / Mac
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 3. Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 🤖 Instalar Ollama
+
+Descargar desde:
+
+[https://ollama.com](https://ollama.com)
+
+Luego instalar el modelo:
+
+```bash
+ollama pull qwen3:4b
+```
+
+También puedes usar:
+
+* qwen3:8b
+* llama3
+* mistral
+* deepseek
+
+---
+
+# 🔑 Configuración
+
+Crear archivo `.env`
+
+```env
+# Telegram
+BOT_TOKEN=TU_TOKEN
+AUTHORIZED_USERS=123456789
+
+# Ollama
+OLLAMA_MODEL=qwen3:4b
+
+# Supabase
+SUPABASE_URL=https://xxxx.supabase.co
+SUPABASE_KEY=TU_SERVICE_ROLE
+
+# Storage
+STORAGE_BUCKET=Excels
+STORAGE_FOLDER_ORIGINALES=originales
+STORAGE_FOLDER_PROCESADOS=procesados
+
+# Configuración
+MAX_FILE_MB=20
+MAX_CONCURRENT_JOBS=3
+HISTORY_TURNS=10
+```
+
+---
+
+# ▶️ Ejecutar el bot
+
+```bash
+python bot.py
+```
+
+Si todo está correcto verás algo similar:
+
+```txt
+Bot iniciado correctamente
+Modelo activo: qwen3:4b
+```
+
+---
+
+# 📊 Funcionalidades del Excel
+
+## Detección flexible de columnas
+
+El sistema detecta automáticamente aliases como:
+
+| Nombre canónico     | Alias soportados            |
+| ------------------- | --------------------------- |
+| Guia#               | guía, tracking, número guía |
+| Ciudad              | destino, municipio          |
+| Nombre Destinatario | cliente, receptor           |
+| Peso-2              | peso, kg, weight            |
+
+---
+
+## Normalización de ciudades
+
+Convierte variantes como:
+
+```txt
+Bogotá
+BOGOTA
+Bogota D.C.
+Santafé de Bogotá
+```
+
+En un formato estándar.
+
+---
+
+## Clasificación automática
+
+Genera hojas:
+
+* Original
+* Bogotá
+* Ciudades y Municipios
+* Hojas por patrón detectado
+
+---
+
+# 🤖 Herramientas IA disponibles
+
+## Búsquedas
+
+* Buscar guías
+* Buscar clientes
+* Filtrar ciudades
+* Top ciudades
+* Estadísticas de peso
+* Estadísticas por patrón
+
+---
+
+## Supabase CRUD
+
+* Insertar registros
+* Consultar tablas
+* Editar registros
+* Eliminar registros
+
+---
+
+## Storage
+
+* Subir Excel
+* Descargar archivos
+* Eliminar archivos
+* Listar contenido
+
+---
+
+# 📱 Comandos del bot
+
+| Comando      | Descripción          |
+| ------------ | -------------------- |
+| /start       | Iniciar bot          |
+| /ayuda       | Mostrar ayuda        |
+| /resumen     | Resumen del Excel    |
+| /patrones    | Ver patrones         |
+| /historial   | Últimos archivos     |
+| /modelo      | Modelo activo        |
+| /limpiar     | Limpiar conversación |
+| /supabase    | Test conexión        |
+| /storage     | Test bucket          |
+| /revaluos    | Ver revaluos         |
+| /retenciones | Ver retenciones      |
+
+---
+
+# 🗄️ Base de datos local
+
+El proyecto usa SQLite para:
+
+* Historial de archivos
+* Acciones del usuario
+* Conversaciones
+* Registro operativo
+
+Archivo:
+
+```txt
+data/bot.db
+```
+
+---
+
+# ☁️ Supabase recomendado
+
+## Buckets sugeridos
+
+```txt
+Excels/
+├── originales/
+└── procesados/
+```
+
+---
+
+## Tablas sugeridas
+
+### revaluos
+
+```sql
+create table revaluos (
+  id bigint generated always as identity primary key,
+  guia text,
+  cliente text,
+  ciudad text,
+  revaluo text,
+  created_at timestamp default now()
+);
+```
+
+### retenciones
+
+```sql
+create table retenciones (
+  id bigint generated always as identity primary key,
+  guia text,
+  cliente text,
+  ciudad text,
+  motivo text,
+  created_at timestamp default now()
+);
+```
+
+---
+
+
+
+# 📝 .gitignore recomendado
+
+```gitignore
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+logs/
+data/excels/
+data/processed/
+*.db
+```
+
+---
+
+# 🚀 Futuras mejoras
+
+Ideas para evolucionar el proyecto:
+
+* Dashboard web
+* OCR de guías
+* Reconocimiento de PDFs
+* Multiusuario
+* Panel administrativo
+* API REST
+* Docker
+* Integración WhatsApp
+* Automatización masiva
+* Entrenamiento de modelos propios
+
+---
+
+# 🧪 Ejemplos de uso
+
+## Buscar cliente
+
+```txt
+Busca todos los clientes con APX
+```
+
+## Buscar guía
+
+```txt
+Busca la guía 7713090537
+```
+
+## Top ciudades
+
+```txt
+¿Cuáles son las ciudades con más despachos?
+```
+
+## Registrar revaluo
+
+```txt
+La guía 7713090537 tiene revaluo
+```
+
+---
+
+# 📸 Flujo general
+
+```txt
+Telegram → Bot → Excel → IA → Supabase → Respuesta
+```
+
+---
+
+# 📌 Requisitos mínimos
+
+## Recomendado
+
+* Ryzen 5 o superior
+* 16GB RAM mínimo
+* SSD
+* Ollama instalado
+
+## Modelos recomendados
+
+| Modelo   | Recomendación      |
+| -------- | ------------------ |
+| qwen3:4b | Liviano y rápido   |
+| qwen3:8b | Mejor razonamiento |
+| llama3   | General            |
+| deepseek | Programación       |
 
 ---
 
 # 👨‍💻 Autor
 
-Proyecto desarrollado por Alejandro Rodriguez como propuesta de optimización logística mediante Inteligencia Artificial aplicada a procesos courier.
+Proyecto desarrollado como sistema inteligente de automatización courier usando IA local.
+
+---
+
+# 📄 Licencia
+
+Uso educativo y privado.

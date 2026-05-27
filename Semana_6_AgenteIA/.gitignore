@@ -1,16 +1,28 @@
-# v0 sandbox internal files
-__v0_runtime_loader.js
-__v0_devtools.tsx
-__v0_jsx-dev-runtime.ts
-.snowflake/
-.v0-trash/
-.vercel/
+# Entorno virtual
+venv/
+.venv/
 
-# Environment variables
-.env*.local
+# Python cache
+__pycache__/
+*.pyc
 
-# Common ignores
-node_modules
-.next/
-tsconfig.tsbuildinfo
-.DS_Store
+# Logs
+logs/
+*.log
+
+# Base de datos
+*.db
+*.sqlite3
+
+# Excel generados
+data/excels/
+data/processed/
+
+# Variables sensibles
+.env
+
+# VSCode
+.vscode/
+
+# Windows
+Thumbs.db
